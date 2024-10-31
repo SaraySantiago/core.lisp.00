@@ -15,15 +15,17 @@ class cons:
             self.__car = o
 
     def __str__(self) -> str:
-        answ = "( "
+        answ = "("
  
         if not self.__car:
-            answ += "()"
+            answ += "NIL"
         else: 
             answ += str(self.__car)
+            
+        answ += " "
  
         if not self.__cdr:
-            answ += "()"
+            answ += "NIL"
         else: 
             answ += str(self.__car)
  
@@ -42,11 +44,15 @@ class cons:
 if __name__ == "__main__":
 
     a0 = atom()    
-    #print(a0)
+    a1 = atom(2)
+    a2 = atom([2])    
     
-    a1 = atom(2)    
-   # print(a1)
+    c0 = cons()
+    print(c0)            
     
-    c = cons()
-    print(c)
-    
+    c1 = cons (22)
+    print(c1)
+    c2 = cons (a1)
+    print(c2)
+    c3 = cons (a2)
+    print(c3)
